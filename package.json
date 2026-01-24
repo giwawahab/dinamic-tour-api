@@ -1,0 +1,20 @@
+{
+  "name": "dinamic-tour",
+  "version": "1.0.0",
+  "description": "backend service that manages tour-related data such as destinations, bookings, users, pricing, and schedules, allowing client applications to create, retrieve, update, and manage tour information efficiently.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tour",
+    "node",
+    "express",
+    "api"
+  ],
+  "author": "Wahab Giwa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.22.1"
+  }
+}
