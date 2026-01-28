@@ -4,16 +4,15 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config/config.env" });
 
 const app = require("./app");
-const connectDatabases = require("./config/db");
 
+const DB = process.env.DATABASE.replace(
+  "<PASSWORD>",
+  process.env.DATABASE_PASSWORD,
+);
 
-let localDB, atlasDB;
-
-(async () => {
-  const connections = await connectDatabases();
-  localDB = connections.localDB;
-  atlasDB = connections.atlasDB;
-})();
+mongoose.connect(DB).then(() => {
+  console.log("Connected Successfully");
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
